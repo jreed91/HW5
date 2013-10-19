@@ -24,31 +24,61 @@
             </ul>
         </div>
         <div class="content">
-            <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" DataKeyNames="Recipe_ID" DataSourceID="SqlDataSource1">
+            <asp:DetailsView ID="DetailsView1" runat="server" Width="400px" BackColor="White" AutoGenerateRows="False" DataKeyNames="Recipe_ID" DataSourceID="SqlDataSource1">
                 <Fields>
-                    <asp:BoundField DataField="Recipe_ID" HeaderText="Recipe_ID" ReadOnly="True" SortExpression="Recipe_ID" />
-                    <asp:BoundField DataField="Recipe_Name" HeaderText="Recipe_Name" SortExpression="Recipe_Name" />
-                    <asp:BoundField DataField="Submitted_By" HeaderText="Submitted_By" SortExpression="Submitted_By" />
-                    <asp:BoundField DataField="Ingredient_1" HeaderText="Ingredient_1" SortExpression="Ingredient_1" />
-                    <asp:BoundField DataField="Ingredient_2" HeaderText="Ingredient_2" SortExpression="Ingredient_2" />
-                    <asp:BoundField DataField="Ingredient_3" HeaderText="Ingredient_3" SortExpression="Ingredient_3" />
-                    <asp:BoundField DataField="Ingredient_5" HeaderText="Ingredient_5" SortExpression="Ingredient_5" />
-                    <asp:BoundField DataField="Preparation" HeaderText="Preparation" SortExpression="Preparation" />
-                    <asp:BoundField DataField="Notes" HeaderText="Notes" SortExpression="Notes" />
-                    <asp:CommandField ShowEditButton="True" />
+                    <asp:BoundField DataField="Recipe_ID" HeaderText="Recipe_ID" ReadOnly="True" SortExpression="Recipe_ID" InsertVisible="False" Visible="False" />
+                    <asp:BoundField DataField="Recipe_Name" HeaderText="Recipe Name" SortExpression="Recipe_Name" >
+                    <HeaderStyle ForeColor="DimGray" />
+                    <ItemStyle ForeColor="LightCoral" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="Submitted_By" HeaderText="Submitted By" SortExpression="Submitted_By" >
+                    <HeaderStyle ForeColor="DimGray" />
+                    <ItemStyle ForeColor="LightCoral" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="Ingredient_1" HeaderText="Ingredient 1" SortExpression="Ingredient_1" >
+                    <HeaderStyle ForeColor="DimGray" />
+                        <ItemStyle ForeColor="LightCoral" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="Ingredient_2" HeaderText="Ingredient 2" SortExpression="Ingredient_2" >
+                    <HeaderStyle ForeColor="DimGray" />
+                        <ItemStyle ForeColor="LightCoral" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="Ingredient_3" HeaderText="Ingredient 3" SortExpression="Ingredient_3" >
+                    <HeaderStyle ForeColor="DimGray" />
+                        <ItemStyle ForeColor="LightCoral" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="Ingredient_4" HeaderText="Ingredient 4" SortExpression="Ingredient_4" >
+                    <HeaderStyle ForeColor="DimGray" />
+                        <ItemStyle ForeColor="LightCoral" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="Ingredient_5" HeaderText="Ingredient 5" SortExpression="Ingredient_5" >
+                    <HeaderStyle ForeColor="DimGray" />
+                        <ItemStyle ForeColor="LightCoral" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="Preparation" HeaderText="Preparation" SortExpression="Preparation" >
+                    <HeaderStyle ForeColor="DimGray" />
+                        <ItemStyle ForeColor="LightCoral" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="Notes" HeaderText="Notes" SortExpression="Notes" >
+                    <HeaderStyle ForeColor="DimGray" />
+                        <ItemStyle ForeColor="LightCoral" />
+                    </asp:BoundField>
+                    <asp:CommandField ShowEditButton="True" ButtonType="Button" ControlStyle-CssClass="button" ShowDeleteButton="True" >
+<ControlStyle CssClass="button"></ControlStyle>
+                    </asp:CommandField>
                 </Fields>
             </asp:DetailsView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Recipes] WHERE [Recipe_ID] = @Recipe_ID" InsertCommand="INSERT INTO [Recipes] ([Recipe_ID], [Recipe_Name], [Submitted By], [Ingredient_1], [Ingredient_2], [Ingredient_3], [Ingredient_5], [Preparation], [Notes]) VALUES (@Recipe_ID, @Recipe_Name, @Submitted_By, @Ingredient_1, @Ingredient_2, @Ingredient_3, @Ingredient_5, @Preparation, @Notes)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Recipe_ID], [Recipe_Name], [Submitted By] AS Submitted_By, [Ingredient_1], [Ingredient_2], [Ingredient_3], [Ingredient_5], [Preparation], [Notes] FROM [Recipes] WHERE ([Recipe_ID] = @Recipe_ID)" UpdateCommand="UPDATE [Recipes] SET [Recipe_Name] = @Recipe_Name, [Submitted By] = @Submitted_By, [Ingredient_1] = @Ingredient_1, [Ingredient_2] = @Ingredient_2, [Ingredient_3] = @Ingredient_3, [Ingredient_5] = @Ingredient_5, [Preparation] = @Preparation, [Notes] = @Notes WHERE [Recipe_ID] = @Recipe_ID">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" DeleteCommand="DELETE FROM [Recipes] WHERE [Recipe_ID] = @Recipe_ID" InsertCommand="INSERT INTO [Recipes] ([Recipe_Name], [Submitted_By], [Ingredient_1], [Ingredient_2], [Ingredient_3], [Ingredient_4], [Ingredient_5], [Preparation], [Notes]) VALUES (@Recipe_Name, @Submitted_By, @Ingredient_1, @Ingredient_2, @Ingredient_3, @Ingredient_4, @Ingredient_5, @Preparation, @Notes)" SelectCommand="SELECT [Recipe_ID], [Recipe_Name], [Submitted_By], [Ingredient_1], [Ingredient_2], [Ingredient_3], [Ingredient_4], [Ingredient_5], [Preparation], [Notes] FROM [Recipes] WHERE ([Recipe_ID] = @Recipe_ID)" UpdateCommand="UPDATE [Recipes] SET [Recipe_Name] = @Recipe_Name, [Submitted_By] = @Submitted_By, [Ingredient_1] = @Ingredient_1, [Ingredient_2] = @Ingredient_2, [Ingredient_3] = @Ingredient_3, [Ingredient_4] = @Ingredient_4, [Ingredient_5] = @Ingredient_5, [Preparation] = @Preparation, [Notes] = @Notes WHERE [Recipe_ID] = @Recipe_ID">
                 <DeleteParameters>
-                    <asp:Parameter Name="Recipe_ID" Type="Decimal" />
+                    <asp:Parameter Name="Recipe_ID" Type="Int32" />
                 </DeleteParameters>
                 <InsertParameters>
-                    <asp:Parameter Name="Recipe_ID" Type="Decimal" />
                     <asp:Parameter Name="Recipe_Name" Type="String" />
                     <asp:Parameter Name="Submitted_By" Type="String" />
                     <asp:Parameter Name="Ingredient_1" Type="String" />
                     <asp:Parameter Name="Ingredient_2" Type="String" />
                     <asp:Parameter Name="Ingredient_3" Type="String" />
+                    <asp:Parameter Name="Ingredient_4" Type="String" />
                     <asp:Parameter Name="Ingredient_5" Type="String" />
                     <asp:Parameter Name="Preparation" Type="String" />
                     <asp:Parameter Name="Notes" Type="String" />
@@ -59,13 +89,14 @@
                     <asp:Parameter Name="Ingredient_1" Type="String" />
                     <asp:Parameter Name="Ingredient_2" Type="String" />
                     <asp:Parameter Name="Ingredient_3" Type="String" />
+                    <asp:Parameter Name="Ingredient_4" Type="String" />
                     <asp:Parameter Name="Ingredient_5" Type="String" />
                     <asp:Parameter Name="Preparation" Type="String" />
                     <asp:Parameter Name="Notes" Type="String" />
-                    <asp:Parameter Name="Recipe_ID" Type="Decimal" />
+                    <asp:Parameter Name="Recipe_ID" Type="Int32" />
                 </UpdateParameters>
                 <SelectParameters>
-                    <asp:QueryStringParameter Name="Recipe_ID" QueryStringField="ID"/>
+                    <asp:QueryStringParameter Name="Recipe_ID" QueryStringField="ID" DefaultValue="" Type="Int32"/>
                 </SelectParameters>
             </asp:SqlDataSource>
         </div>
