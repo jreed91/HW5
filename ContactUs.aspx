@@ -23,10 +23,19 @@
                     <li><a href="ContactUs.aspx">Contact</a></li>
                 </ul>
             </div>
-            <div class="content">
-
+            <div class="formContent">
+                <div class="form">
+                    <label>Your Email Address</label><asp:TextBox ID="tbYourEmail" runat="server" TextMode="Email"></asp:TextBox>
+                    <br />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="You must fill out all fields" ControlToValidate="tbYourEmail"></asp:RequiredFieldValidator>
+                    <br />
+                    <label>Your Message </label>&nbsp;<asp:TextBox ID="tbMessage" runat="server" Height="55px" TextMode="MultiLine" Width="229px"></asp:TextBox><br />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="tbMessage" ErrorMessage="You Must fill out all fields"></asp:RequiredFieldValidator><br />
+                    
+                </div>
             </div>
         </div>
+        <asp:Button ID="Button1" runat="server" Text="Send Message" CssClass="btnSend" />
     </div>
 
     </form>
