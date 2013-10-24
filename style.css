@@ -33,6 +33,11 @@ a
     color: #696969;
     text-decoration: none;
 }
+    a:hover
+    {
+        color: #fff;
+        text-decoration: underline;
+    }
 
 table
 {
@@ -42,6 +47,7 @@ table
 .content
 {
     text-align: center;
+
 }
 .button
 {
@@ -80,3 +86,45 @@ table
         margin-bottom: 10px;
     }
 
+.gridviewCSS
+{
+    background-color: #F08080;
+    border: 1px solid #fff;
+    border-collapse: collapse;
+}
+    .gridviewCSS td
+    {
+        padding: 10px;
+        border: solid 1px #fff;
+        color: #fff;
+    }
+    .gridviewCSS th
+    {
+        color: #696969;
+        padding: 10px;
+        border: 1px solid #696969;
+        background-color: #ffff99;
+    }
+.detailsCSS
+{
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-collapse: collapse;
+    color: #F08080;
+}
+.detailsHeader
+{
+    background-color: #696969;
+    color: #FFF;
+}
+.fieldHeader
+{
+    color: #696969;
+    padding: 10px;
+    border: 1px solid #696969;
+}
+.item
+{
+    color: #f08080;
+    border: 1px solid #696969;
+}

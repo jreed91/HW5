@@ -24,44 +24,26 @@
             </ul>
         </div>
         <div class="content">
-            <asp:DetailsView ID="DetailsView1" runat="server" Width="400px" BackColor="White" AutoGenerateRows="False" DataKeyNames="Recipe_ID" DataSourceID="SqlDataSource1">
+            <asp:DetailsView ID="DetailsView1" runat="server" Width="400px" AutoGenerateRows="False" DataKeyNames="Recipe_ID" DataSourceID="SqlDataSource1" GridLines="None" CssClass="detailsCSS" HeaderStyle-CssClass="detailsHeader" HeaderText="Recipe" FieldHeaderStyle-CssClass="fieldHeader" AlternatingRowStyle-CssClass="altRow"  RowStyle-CssClass="item" EmptyDataRowStyle-CssClass="item" BorderColor="#696969">
                 <Fields>
                     <asp:BoundField DataField="Recipe_ID" HeaderText="Recipe_ID" ReadOnly="True" SortExpression="Recipe_ID" InsertVisible="False" Visible="False" />
                     <asp:BoundField DataField="Recipe_Name" HeaderText="Recipe Name" SortExpression="Recipe_Name" >
-                    <HeaderStyle ForeColor="DimGray" />
-                    <ItemStyle ForeColor="LightCoral" />
                     </asp:BoundField>
                     <asp:BoundField DataField="Submitted_By" HeaderText="Submitted By" SortExpression="Submitted_By" >
-                    <HeaderStyle ForeColor="DimGray" />
-                    <ItemStyle ForeColor="LightCoral" />
                     </asp:BoundField>
                     <asp:BoundField DataField="Ingredient_1" HeaderText="Ingredient 1" SortExpression="Ingredient_1" >
-                    <HeaderStyle ForeColor="DimGray" />
-                        <ItemStyle ForeColor="LightCoral" />
                     </asp:BoundField>
                     <asp:BoundField DataField="Ingredient_2" HeaderText="Ingredient 2" SortExpression="Ingredient_2" >
-                    <HeaderStyle ForeColor="DimGray" />
-                        <ItemStyle ForeColor="LightCoral" />
                     </asp:BoundField>
                     <asp:BoundField DataField="Ingredient_3" HeaderText="Ingredient 3" SortExpression="Ingredient_3" >
-                    <HeaderStyle ForeColor="DimGray" />
-                        <ItemStyle ForeColor="LightCoral" />
                     </asp:BoundField>
                     <asp:BoundField DataField="Ingredient_4" HeaderText="Ingredient 4" SortExpression="Ingredient_4" >
-                    <HeaderStyle ForeColor="DimGray" />
-                        <ItemStyle ForeColor="LightCoral" />
                     </asp:BoundField>
                     <asp:BoundField DataField="Ingredient_5" HeaderText="Ingredient 5" SortExpression="Ingredient_5" >
-                    <HeaderStyle ForeColor="DimGray" />
-                        <ItemStyle ForeColor="LightCoral" />
                     </asp:BoundField>
                     <asp:BoundField DataField="Preparation" HeaderText="Preparation" SortExpression="Preparation" >
-                    <HeaderStyle ForeColor="DimGray" />
-                        <ItemStyle ForeColor="LightCoral" />
                     </asp:BoundField>
                     <asp:BoundField DataField="Notes" HeaderText="Notes" SortExpression="Notes" >
-                    <HeaderStyle ForeColor="DimGray" />
-                        <ItemStyle ForeColor="LightCoral" />
                     </asp:BoundField>
                     <asp:CommandField ShowEditButton="True" ButtonType="Button" ControlStyle-CssClass="button" ShowDeleteButton="True" >
 <ControlStyle CssClass="button"></ControlStyle>

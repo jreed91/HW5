@@ -23,25 +23,18 @@
             </ul>
         </div>
         <div class="content">
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Recipe_ID" DataSourceID="SqlDataSource1">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Recipe_ID" DataSourceID="SqlDataSource1" GridLines="None" CssClass="gridviewCSS">
                 <Columns>
                     <asp:BoundField DataField="Recipe_ID" HeaderText="Recipe_ID" ReadOnly="True" SortExpression="Recipe_ID" Visible="False" >
-                    <ControlStyle BorderColor="White" />
                     </asp:BoundField>
                     <asp:BoundField DataField="Recipe_Name" HeaderText="Recipe Name" SortExpression="Recipe_Name" >
-                    <HeaderStyle BackColor="#FFFF99" ForeColor="DimGray" />
-                    <ItemStyle BackColor="LightCoral" ForeColor="White" />
                     </asp:BoundField>
                     <asp:BoundField DataField="Submitted_By" HeaderText="Submitted By" SortExpression="Submitted_By" >
-                    <HeaderStyle BackColor="#FFFF99" ForeColor="DimGray" />
-                    <ItemStyle BackColor="LightCoral" ForeColor="White" />
                     </asp:BoundField>
                     <asp:TemplateField HeaderText="View Recipe">
                         <ItemTemplate>
                             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# Eval("Recipe_ID", "Recipe.aspx?ID={0}") %>' Text="View Details"></asp:HyperLink>
                         </ItemTemplate>
-                        <HeaderStyle BackColor="#FFFF99" ForeColor="DimGray" />
-                        <ItemStyle BackColor="LightCoral" BorderColor="White" ForeColor="White" />
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>&nbsp;<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="SELECT [Recipe_ID], [Recipe_Name], [Submitted_By] FROM [Recipes]"></asp:SqlDataSource>
